@@ -14,17 +14,18 @@ print('*****************************************************************')
 print('*                     Tool: PC Info                             *')
 print('*                  Version: v1.5.0                              *')
 print('*             Release Date: 2025.07.01                          *')
-print('*                   Author: Gavin.X                             *')
+print('*                   Author: Gavin.Xie                           *')
 print('*****************************************************************')
 print('\n')
 
 '''
-2025.07.01 Gavin.X v1.5.0, Modify codes in systemInfo/batteryInfo/AppInfo section.
-2025.05.01 Gavin.X v1.4.0, Modify codes in systemInfo/batteryInfo section.
-2025.04.10 Gavin.X v1.3.0, Fix some issue when not have apps & products & device.
-2025.03.28 Gavin.X v1.2.2, Add driver date info to driver section. Modify some codes.
-2024.10.16 Gavin.X v1.2.1, Add tool version info to json file; Modify OS version display format.
-2024.07.25 Gavin.X v1.2.1 Add Memory Vendor and more info to Memory section.
+2025.07.01 Gavin.Xie v1.5.0, Modify codes in systemInfo/batteryInfo/AppInfo section.
+2025.05.01 Gavin.Xie v1.4.0, Modify codes in systemInfo/batteryInfo section.
+2025.04.10 Gavin.Xie v1.3.0, Fix some issue when not have apps & products & device.
+2025.03.28 Gavin.Xie v1.2.2, Add driver date info to driver section. Modify some codes.
+2024.10.16 Gavin.Xie v1.2.1, Add tool version info to json file; Modify OS version display format.
+2024.07.25 Gavin.Xie v1.2.1 Add Memory Vendor and more info to Memory section.
+2023.1 Gavin.Xie v0.0.1 Add CPU,BIOS,RAM,System section.
 '''
 tool_name = 'PC Info'
 tool_ver = '1.5.0'
