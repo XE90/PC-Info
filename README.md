@@ -20,7 +20,7 @@ pyisntaller --onefile PC_Info_v1.7.0.py
 ├── PC_Info_v1.7.0.py           # 代码脚本
 ```
 ## 如有问题，请联系
-2567385744@qq.com
+x3012378557@outlook.com
 
 ## Version
 2025.07.12 Gavin.Xie v1.7.0, Add collect PC info for Linux system.
