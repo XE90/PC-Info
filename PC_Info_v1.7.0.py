@@ -947,7 +947,8 @@ class LinuxOS:
             "interfaces": self.run_command("ip -o link show | awk '{print $2}'").replace(':', '').split('\n'),
             "ip_addresses": self.run_command("ip -o addr show | awk '{print $2, $4}'").split('\n'),
             "wireless": self.run_command("iw dev").split('\n') if self.run_command("which iw") else [],
-            "ethernet": self.run_command("ethtool eth0").split('\n') if self.run_command("which ethtool") else [],
+            # "ethernet": self.run_command("ethtool eth0").split('\n') if self.run_command("which ethtool") else [],
+            "ethernet": self.run_command("ethtool eth0") if self.run_command("which ethtool") else [],
             "routing": self.run_command("ip route").split('\n'),
             "dns": {
                 "resolv.conf": self.get_file_content('/etc/resolv.conf'),
