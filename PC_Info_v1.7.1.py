@@ -16,8 +16,8 @@ from collections import defaultdict
 
 print('*****************************************************************')
 print('*                     Tool: PC Info                             *')
-print('*                  Version: v1.7.0                              *')
-print('*             Release Date: 2025.07.12                          *')
+print('*                  Version: v1.7.1                              *')
+print('*             Release Date: 2025.10.22                          *')
 print('*                   Author: Gavin.Xie                           *')
 print('*****************************************************************')
 print('\n')
