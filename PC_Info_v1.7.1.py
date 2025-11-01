@@ -11,6 +11,7 @@ import argparse
 import ctypes
 from bs4 import BeautifulSoup
 import platform
+import shutil
 from typing import Optional, List, Union
 from collections import defaultdict
 
@@ -72,7 +73,7 @@ def get_os_type():
     elif system == "Linux":
         return "Linux"
     else:
-        return "Other (e.g., macOS)"
+        return "Other (e.g., macOS)"                                        
 
 def write_to_json():
     try:
@@ -661,19 +662,20 @@ class LinuxOS:
 
             # 使用v4l2-ctl获取更多信息(May need to install: sudo apt install v4l-utils)
             try:
-                v4l2_output = subprocess.check_output(
-                    ['v4l2-ctl', '--device=' + device_path, '--all'],
-                    stderr=subprocess.STDOUT
-                ).decode('utf-8')
+                if shutil.which('v4l2-ctl') is not None:
+                    v4l2_output = subprocess.check_output(
+                        ['v4l2-ctl', '--device=' + device_path, '--all'],
+                        stderr=subprocess.STDOUT
+                    ).decode('utf-8')
 
-                # 解析v4l2-ctl输出
-                for line in v4l2_output.split('\n'):
-                    if 'Driver name' in line:
-                        info['driver'] = line.split(':')[1].strip()
-                    elif 'Bus info' in line:
-                        info['bus_info'] = line.split(':')[1].strip()
-                    elif 'Driver version' in line:
-                        info['driver_version'] = line.split(':')[1].strip()
+                    # 解析v4l2-ctl输出
+                    for line in v4l2_output.split('\n'):
+                        if 'Driver name' in line:
+                            info['driver'] = line.split(':')[1].strip()
+                        elif 'Bus info' in line:
+                            info['bus_info'] = line.split(':')[1].strip()
+                        elif 'Driver version' in line:
+                            info['driver_version'] = line.split(':')[1].strip()
 
             except subprocess.CalledProcessError as e:
                 print(f"使用v4l2-ctl获取设备 {device_path} 信息时出错: {e.output}")
